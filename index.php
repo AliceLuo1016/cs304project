@@ -1,37 +1,68 @@
 <html>
+
 <head>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <title>Zoo Database</title>
-  <h1>PseudoZoo</h1>
+  <title>PseudoZoo</title>
+
+	<!-- Importing css -->
+		<link rel="stylesheet" href="css/bootstrap.min.css" >
+		<link rel="stylesheet" href="css/zoo.css" >
+
 </head>
 
 <body>
 
-<nav id="primary_nav_wrap">
-<ul>
-  <li><a href="#">Home</a>
-  <li><a href="#">Data Tables</a>
-    <ul>
-      <li><a href="#">Animals</a></li>
-      <li><a href="#">Habitats</a></li>
-      <li><a href="#">Performances</a></li>
-    </ul>
-  </li>
-  <li><a href="#">Customer Service</a>
-    <ul>
-      <li><a href="#">Member Application</a></li>
-      <li><a href="#">Leave a Comment</a></li>
-    </ul>
-  </li>
-  <li><a href="#">Contact Us</a></li>
-</ul>
-</nav>
+	<!-- top navigation -->
+  <nav class="navbar navbar-default navbar-fixed-top" role="banner" style="background: #2E8B57;">
+      <div class="container">
 
-  <div class="content">
-		<div>
-			<h2> WELCOME! <br /> <br /> THIS IS OUR ZOO DATABASE. </h2>
-		</div>
+        <div class="navbar-header">
+          <a href="index.php" class="navbar-brand" style="color: #fff" onMouseOver="this.style.backgroundColor='#3CB371'"
+          onMouseOut="this.style.backgroundColor='#2E8B57'"><b>PseudoZoo</b></a>
+        </div>
+
+        <nav class="collapse navbar-collapse" role="navigation">
+					<ul class="nav navbar-nav pull-right">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="about.php" style="color: #fff;" onMouseOver="this.style.backgroundColor='#3CB371'"
+              onMouseOut="this.style.backgroundColor='#2E8B57'">About</a>
+            </li>
+
+						<li>
+              <a href="login.php" style="color: #fff;" onMouseOver="this.style.backgroundColor='#3CB371'"
+              onMouseOut="this.style.backgroundColor='#2E8B57'">Sign In</a>
+            </li>
+          </ul>
+				</ul>
+        </nav>
+
+      </div>
+    </nav>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="list-group pull-right col-md-3">
+  <br>
+  <label> Display </label>
+  <a href="animals.php" class="list-group-item">Animals</a>
+  <a href="habitat.php" class="list-group-item">Habitats</a>
+  <a href="performance.php" class="list-group-item">Performances</a>
+  <br>
+  <label> Customer Service </label>
+  <a href="membership.php" class="list-group-item">Membership Application</a>
+  <a href="comments.php" class="list-group-item">Comments</a>
   </div>
+
+
+  <div class="welcomeMsg">
+			<div style="width:100%; text-align:center; padding-top:50px; padding-bottom:30px;">
+				<h2 style="font-size: 1.4em;"> WELCOME! <br /> <br /> THIS IS OUR ZOO DATABASE. </h2>
+			</div>
+  </div>
+
 
 </body>
 
