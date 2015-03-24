@@ -32,6 +32,11 @@
               <a href="login.php" style="color: #fff;" onMouseOver="this.style.backgroundColor='#3CB371'"
               onMouseOut="this.style.backgroundColor='#2E8B57'">Sign In</a>
             </li>
+
+            <li>
+              <a href="register.php" style="color: #fff;" onMouseOver="this.style.backgroundColor='#3CB371'"
+              onMouseOut="this.style.backgroundColor='#2E8B57'">Register</a>
+            </li>
           </ul>
 				</ul>
         </nav>
