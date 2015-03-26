@@ -10,6 +10,7 @@ function conn_db() {
 	return null;
   }
   echo "Successfully connected to database!". "<br />";
+  echo "<br>";
   return $condb;
 }
 
