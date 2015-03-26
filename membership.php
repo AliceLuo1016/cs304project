@@ -1,20 +1,54 @@
+<?php
+
+//get the functions to connect to db
+include "connectfunc.php";
+
+session_start();
+
+function new_member($condb) {
+	if ($_POST["name"] && $_POST["phone"] && $_POST["addr"]) {
+		$mname = $_POST["name"];
+		$phone = $_POST["phone"];
+		$addr = $_POST["addr"];
+		
+		$mname = mysqli_real_escape_string($condb, $mname);
+		$phone = mysqli_real_escape_string($condb, $phone);
+		$addr = mysqli_real_escape_string($condb, $addr);
+		
+		$query = "SELECT MemberID FROM member WHERE Name = '" ."$mname" ."'";
+		
+		$querytwo = "INSERT INTO member (PhoneNo, Address, Name)
+						values ( '" . "$phone". "','" . 
+								"$addr" ."','". 
+								"$mname" ."') ";
+	
+		if ($condb->query($querytwo) === TRUE) {
+			$result = $condb->query($query);
+			$row = $result->fetch_assoc();
+			$num_mem = $row["MemberID"];
+			$num_mem = mysqli_real_escape_string($condb, $num_mem);
+			$result->free();
+			echo "Thank you for signing up! Your MemberID and Password is: " ."$num_mem";
+		} else echo "Sign up unsuccessful";
+	} else echo "Please fill in all fields!";
+}
+
+$condb = conn_db();
+if (isset($_POST["submit"])) {
+	new_member($condb);
+}
+dconn_db($condb);
+?>
+
 <html>
-<head>
-<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-<meta content="utf-8" http-equiv="encoding">
-<title>Registration</title>
+<body>
+  <form action="<?php $_PHP_SELF ?>" method="POST">
 
-<body>Membership Application</body>
-
-<p>Please input your information.</p>
-<form method="POST" action="membership.php"> 
-<table border=0 cellpadding=0 cellspacing=0>
-<tr><td>Name</td><td><input type="text" size=30 name="new_name"</td></tr>
-<tr><td>Address</td><td><input type="text" size=30 name="new_address"</td></tr>
-<tr><td>PhoneNo</td><td><input type="text" size=30 name="new_phone"</td></tr>
-</table>
-<br>
-<tr><td></td><td><input type="submit" name="register" value="Register"></td></tr> 
-</form>                 
-
-<button onclick="window.location.href='index.php'">Back</button>
+  Name: <input type = "text" name = "name" /> <br>
+  Phone: <input type = "text" name = "phone" /> <br>
+  Address: <input type = "text" name = "addr" /> <br>
+  <input type="submit" name="submit" />
+  </form>
+  
+</body>
+</html>
