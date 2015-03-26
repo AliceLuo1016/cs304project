@@ -21,8 +21,6 @@
 ?>
 
 <?
-	// VIEW
-	// ===============
 ?>
 <html>
 <head>
@@ -42,15 +40,20 @@
 <br>
 <div class="heading">UPDATE animal</div>
 <!-- Add animal Form -->
-<?php createAddanimalForm(); ?>
+<form action="update.php" method="post">
+		<table>
+			<tr><td align="right" style="padding-right: 5px;">Animal Name</td><td align="left"><input type="text" name="aName" value="<?php echo ((isset($animalToAdd["aName"]) && ($formIsValid == false)) ? $animalToAdd["aName"] : "") ?>"></td></tr>
+			<tr><td align="right" style="padding-right: 5px;">Species</td><td align="left"><input type="text" name="Species" value="<?php echo ((isset($animalToAdd["Species"]) && ($formIsValid == false)) ? $animalToAdd["Species"] : "") ?>"></td></tr>
+			<tr><td align="right" style="padding-right: 5px;">Weight</td><td align="left"><input type="text" name="Weight" value="<?php echo ((isset($animalToAdd["Weight"]) && ($formIsValid == false)) ? $animalToAdd["Weight"] : "") ?>"></td></tr>
+			<tr><td align="right" style="padding-right: 5px;">Cost</td><td align="left"><input type="text" name="Cost" value="<?php echo ((isset($animalToAdd["Cost"]) && ($formIsValid == false)) ? $animalToAdd["Cost"] : "") ?>"></td></tr>
+			<tr><td></td><td><input type="submit" value="Update"></td></tr>
+			</table>
+		</form>
 
 </body>
 </html>
 
 <?php
-	// MODEL
-	// ===============
-
 	function addanimal($condb, $animal) {
 		$statement = $condb->prepare("UPDATE Animal SET Weight=?, Cost=? WHERE aName=? AND Species=?");
 		$statement->bind_param("iiss",$animal["Weight"],$animal["Cost"],$animal["aName"], $animal["Species"]);
@@ -63,21 +66,6 @@
 				echo "Unknown error encountered while updating animal" . "<br />";
 				$formIsValid = false;
 			}
-	}
-	
-	function createAddanimalForm() {
-		global $animalToAdd, $formIsValid;
-		?>
-		<form action="update.php" method="post">
-		<table>
-			<tr><td align="right" style="padding-right: 5px;">Animal Name</td><td align="left"><input type="text" name="aName" value="<?php echo ((isset($animalToAdd["aName"]) && ($formIsValid == false)) ? $animalToAdd["aName"] : "") ?>"></td></tr>
-			<tr><td align="right" style="padding-right: 5px;">Species</td><td align="left"><input type="text" name="Species" value="<?php echo ((isset($animalToAdd["Species"]) && ($formIsValid == false)) ? $animalToAdd["Species"] : "") ?>"></td></tr>
-			<tr><td align="right" style="padding-right: 5px;">Weight</td><td align="left"><input type="text" name="Weight" value="<?php echo ((isset($animalToAdd["Weight"]) && ($formIsValid == false)) ? $animalToAdd["Weight"] : "") ?>"></td></tr>
-			<tr><td align="right" style="padding-right: 5px;">Cost</td><td align="left"><input type="text" name="Cost" value="<?php echo ((isset($animalToAdd["Cost"]) && ($formIsValid == false)) ? $animalToAdd["Cost"] : "") ?>"></td></tr>
-			<tr><td></td><td><input type="submit" value="Update"></td></tr>
-			</table>
-		</form>
-		<?php
 	}
 	
 	function createanimalList($animals) {
@@ -122,25 +110,25 @@
 			$animalToAdd["aName"] = $_POST["aName"];
 		else {
 			$formIsValid = false;
-			addToMessages("Animal name cannot be empty");
+			echo "<br>" ."Animal name cannot be empty";
 		}
 		if (isset($_POST["Species"]) && $_POST["Species"] != "") 
 			$animalToAdd["Species"] = $_POST["Species"];
 		else {
 			$formIsValid = false;
-			addToMessages("Species cannot be empty");
+			echo "<br>" ."Species cannot be empty";
 		}
-		if (isset($_POST["Weight"]) && $_POST["Weight"] != "") 
+		if (isset($_POST["Weight"]) && $_POST["Weight"] != "" &&($_POST["Weight"] > 0)) 
 			$animalToAdd["Weight"] = $_POST["Weight"];
 		else {
 			$formIsValid = false;
-			addToMessages("Weight cannot be empty");
+			echo "<br>" . "Weight cannot be empty, and must be greater than 0";
 		}
 		if (isset($_POST["Cost"]) && $_POST["Cost"] != "") 
 			$animalToAdd["Cost"] = $_POST["Cost"];
 		else {
 			$formIsValid = false;
-			addToMessages("Cost cannot be empty");
+			echo "<br>" ."Cost cannot be empty";
 		}
 	}
 

@@ -111,6 +111,7 @@ CREATE TABLE Animal(
 	hName CHAR(20)  NOT NULL,
 	aSuppID	MEDIUMINT NOT NULL,
 	Cost INT,
+	CHECK (Weight > 1),
 	PRIMARY KEY (hName, Species, aName, aSuppID),
     UNIQUE KEY (aName, Species),
 	FOREIGN KEY (hName) REFERENCES Habitat(hName),
