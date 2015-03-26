@@ -101,6 +101,7 @@ dconn_db($condb);
   <br>
   <label> Query </label>
   <a href="animal_suppTrace.php" class="list-group-item">Supplier Animal Trace</a>
+  <a href="update.php" class="list-group-item">Database Update</a>
   </div>
   </div>
 </div>
