@@ -24,7 +24,7 @@ function print_performance($condb) {
 			} else 
 			echo "<td>" . $header["name"]. "</td>";
 		}
-		echo "</tr>";
+		echo "</tr><br>";
 		
 		while ($tup = $result->fetch_assoc()) {
 			echo "<tr><td>". $tup["Start_Time"]. "</td><td>".
@@ -35,7 +35,7 @@ function print_performance($condb) {
 				$tup["aName"]. "</td><td>" .
 				$tup["Species"]. "</td></tr>";				
 		}		
-		echo "</table>";
+		echo "</table><br>";
 	}
 }
 

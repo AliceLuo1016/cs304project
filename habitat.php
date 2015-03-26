@@ -19,7 +19,7 @@ function print_habitats($condb) {
 			} else
 			echo "<td>" . $header["name"]. "</td>";
 		}
-		echo "</tr>";
+		echo "</tr><br>";
 		
 		while ($tup = $result->fetch_assoc()) {
 			echo "<tr><td>". 
@@ -29,7 +29,7 @@ function print_habitats($condb) {
 				$tup["Type"]. 
 				 "</td></tr>";				
 		}		
-		echo "</table>";
+		echo "</table><br>";
 	}
 }
 
