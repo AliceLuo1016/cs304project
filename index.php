@@ -66,6 +66,9 @@
   <label> Customer Service </label>
   <a href="membership.php" class="list-group-item">Membership Application</a>
   <a href="comments.php" class="list-group-item">Comments</a>
+  <br>
+  <label> Query </label>
+  <a href="animal_suppTrace.php" class="list-group-item">Supplier Animal Trace</a>
   </div>
   </div>
 </div>
