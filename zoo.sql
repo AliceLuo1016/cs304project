@@ -111,6 +111,7 @@ CREATE TABLE Animal(
 	hName CHAR(20)  NOT NULL,
 	aSuppID	MEDIUMINT NOT NULL,
 	Cost INT,
+	/* CHCK CONSTRAINT CODED HERE */
 	CHECK (Weight > 1),
 	PRIMARY KEY (hName, Species, aName, aSuppID),
     UNIQUE KEY (aName, Species),

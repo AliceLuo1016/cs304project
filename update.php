@@ -118,6 +118,7 @@
 			$formIsValid = false;
 			echo "<br>" ."Species cannot be empty";
 		}
+		//CODED CHECK CONSTRAINT HERE, also in animal table in zoo.sql
 		if (isset($_POST["Weight"]) && $_POST["Weight"] != "" &&($_POST["Weight"] > 0)) 
 			$animalToAdd["Weight"] = $_POST["Weight"];
 		else {
