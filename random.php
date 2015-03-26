@@ -39,3 +39,14 @@ get_table($con);
 dconn_db($con);
 
 ?>
+
+<html>
+<head>
+	<!-- Importing css -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" >
+	<link rel="stylesheet" href="css/zoo.css" >
+</head>
+<body>
+	<?php include("common_layout.php"); ?>
+</body>
+</html>

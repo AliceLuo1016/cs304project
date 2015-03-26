@@ -1,3 +1,20 @@
+<html>
+<head>
+	<!-- Importing css -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" >
+	<link rel="stylesheet" href="css/zoo.css" >
+</head>
+<body>
+	<?php include("common_layout.php"); ?>
+  <form action="<?php $_PHP_SELF ?>" method="POST">
+
+  Animal Name: <input type="text" name="name" />
+  <input type="submit" name="submit" />
+  </form>
+  
+</body>
+</html>
+
 <?php
 // get the functions to connect to db 
 include "connectfunc.php";
@@ -88,14 +105,3 @@ if(isset($_POST["submit"])) {
 dconn_db($condb);
 
 ?>
-
-<html>
-<body>
-  <form action="<?php $_PHP_SELF ?>" method="POST">
-
-  Animal Name: <input type="text" name="name" />
-  <input type="submit" name="submit" />
-  </form>
-  
-</body>
-</html>

@@ -2,6 +2,23 @@
 Sign In page
 -->
 
+<html>
+<head>
+	<!-- Importing css -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" >
+	<link rel="stylesheet" href="css/zoo.css" >
+</head>
+<body>
+	<?php include("common_layout.php"); ?>
+	<form action = "<?php $_PHP_SELF ?>" method= "POST">
+	
+	Member Name: <input type = "text" name = "mem_name" />
+	Password: <input type = "text" name = "pass"/>
+	<input type="submit" name="submit"/>
+	</form>
+</body>
+</html>
+
 <?php
 include "connectfunc.php";
 
@@ -40,13 +57,3 @@ if (isset($_POST["submit"])) {
 dconn_db($condb);
 ?>
 
-<html>
-<body>
-	<form action = "<?php $_PHP_SELF ?>" method= "POST">
-	
-	Member Name: <input type = "text" name = "mem_name" />
-	Password: <input type = "text" name = "pass"/>
-	<input type="submit" name="submit"/>
-	</form>
-</body>
-</html>
