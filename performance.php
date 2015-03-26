@@ -53,6 +53,7 @@ function find_trainer_from_name($condb) {
 			while ($tup = $result->fetch_assoc()) {
 			  echo $tup["Name"] . "<br>";
 			}
+			$result->free();
 		} else echo "No results, sorry" . "<br>";
 	}else echo "Please enter a performance name!" . "<br>";
 }
