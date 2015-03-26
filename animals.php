@@ -77,7 +77,7 @@ function name_query($condb) {
 		echo "Could not find ". $_POST["name"]. "<br />";
 		exit();
 	}
-  }
+  } else echo "Please enter a name!";
 }
 
 $condb = conn_db();
