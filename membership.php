@@ -47,7 +47,7 @@ function new_member($condb) {
 			$num_mem = $row["MemberID"];
 			$num_mem = mysqli_real_escape_string($condb, $num_mem);
 			$result->free();
-			echo "Thank you for signing up! Your MemberID and Password is: " ."$num_mem";
+			echo "Thank you for signing up! You will be put on our mailing list. Your MemberID is: " ."$num_mem";
 		} else echo "Sign up unsuccessful";
 	} else echo "Please fill in all fields!";
 }
