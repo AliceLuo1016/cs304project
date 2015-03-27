@@ -4,7 +4,7 @@ $result = NULL;
 
 // establish connection
 function conn_db() {
-  $condb = @new mysqli("localhost", "root", "", "zoo");
+  $condb = @new mysqli("127.0.0.1", "root", "heuvenmysql", "zoo", "3306");
   if ($condb->connect_error) {
     echo "Error: Could not connect to database". "<br />";
 	return null;
