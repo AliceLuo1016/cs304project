@@ -45,6 +45,9 @@ function print_habitats($condb) {
 }
 
 $condb = conn_db();
+?>
+<h1> Habitat Table </h1>
+<?php
 print_habitats($condb);
 dconn_db($condb);
 

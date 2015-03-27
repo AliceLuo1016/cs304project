@@ -1,4 +1,11 @@
 
+<style>
+body  {
+    font-color:#2E8B57;
+    font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+
 	<!-- top navigation -->
   <nav class="navbar navbar-default navbar-fixed-top" role="banner" style="background: #2E8B57;">
       <div class="container">
@@ -43,7 +50,7 @@
   <a href="membership.php" class="list-group-item">Membership Application</a>
   <a href="comments.php" class="list-group-item">Comments</a>
   <br>
-  <label> Query </label>
+  <label> Animal Information Center </label>
   <a href="animal_suppTrace.php" class="list-group-item">Supplier Animal Trace</a>
   <a href="update.php" class="list-group-item">Database Update</a>
     <a href="animal_weight.php" class="list-group-item">Animal Weights</a>

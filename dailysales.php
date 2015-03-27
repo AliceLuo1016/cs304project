@@ -9,15 +9,6 @@
 <body>
 <?php include("common_layout.php"); ?>
 
-<h1>Daily Balance Reports </h1>
-<form action="<?php $_PHP_SELF ?>" method="POST">
-<br><br>
-<button name="food" type ="submit" value="food">Show total food stand balance</button><br><br><br><br>
-<button name="ticket" type ="submit" value="ticket">Show total ticket balance</button>
-</form>
-
-</body>
-
 <?php
 // get the functions to connect to db
 include "connectfunc.php";
@@ -42,6 +33,16 @@ function ticketsales_query($condb) {
 
 
 $condb = conn_db();
+?>
+
+
+<h1>Daily Balance Reports </h1>
+<form action="<?php $_PHP_SELF ?>" method="POST">
+<button name="food" type ="submit" value="food">Show total food stand balance</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button name="ticket" type ="submit" value="ticket">Show total ticket balance</button>
+</form>
+
+<?php
 if(isset($_POST["food"])) {
 	foodsales_query($condb);
 } else if (isset($_POST["ticket"])) {
@@ -49,8 +50,9 @@ if(isset($_POST["food"])) {
 }
 
 dconn_db($condb);
-
 ?>
+</body>
+
 </html>
 
 

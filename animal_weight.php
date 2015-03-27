@@ -9,15 +9,6 @@
 <body>
 <?php include("common_layout.php"); ?>
 
-<h1>Animal BMI CHECKER </h1>
-<form action="<?php $_PHP_SELF ?>" method="POST">
-Which gender, on average, weighs...<br><br>
-<button name="maximum" type ="submit" value="maximum">THE MOST?</button>&nbsp;&nbsp;&nbsp;&nbsp;
-<button name="minimum" type ="submit" value="minimum">THE LEAST?</button>
-</form>
-
-</body>
-
 <?php
 // get the functions to connect to db
 include "connectfunc.php";
@@ -51,9 +42,17 @@ function weightMin_query($condb) {
 	$row = $result->fetch_array(MYSQL_BOTH);
 	echo "The lightest gender is " . $row[0] . " with an average weight of " . $row[1] . !"<br />";
 } 
-
-
 $condb = conn_db();
+?>
+
+<h1>Animal BMI Checker </h1>
+<form action="<?php $_PHP_SELF ?>" method="POST">
+Which gender, on average, weighs...<br><br>
+<button name="maximum" type ="submit" value="maximum">THE MOST?</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button name="minimum" type ="submit" value="minimum">THE LEAST?</button>
+</form>
+
+<?php
 if(isset($_POST["maximum"])) {
 	weightMax_query($condb);
 } else if (isset($_POST["minimum"])) {
@@ -63,6 +62,9 @@ if(isset($_POST["maximum"])) {
 dconn_db($condb);
 
 ?>
+
+
+</body>
 </html>
 
 

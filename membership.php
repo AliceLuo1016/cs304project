@@ -6,18 +6,7 @@
 </head>
 <body>
 	<?php include("common_layout.php"); ?>
-  <form action="<?php $_PHP_SELF ?>" method="POST">
-
-  Name: <input type = "text" name = "name" /> <br>
-  Phone: <input type = "text" name = "phone" /> <br>
-  Address: <input type = "text" name = "addr" /> <br>
-  <input type="submit" name="submit" />
-  </form>
-  
-</body>
-</html>
-
-<?php
+	<?php
 
 //get the functions to connect to db
 include "connectfunc.php";
@@ -49,7 +38,7 @@ function new_member($condb) {
 			$result->free();
 			echo "Thank you for signing up! You will be put on our mailing list. Your MemberID is: " ."$num_mem";
 		} else echo "Sign up unsuccessful";
-	} else echo "Please fill in all fields!";
+	} else echo "<p style='width:80%; text-align:center'>"."Please fill in all fields!"."</p>";
 }
 
 $condb = conn_db();
@@ -58,4 +47,16 @@ if (isset($_POST["submit"])) {
 }
 dconn_db($condb);
 ?>
+<h1>Membership Application Form </h1><br>
+  <form style='width:80%; text-align:center' action="<?php $_PHP_SELF ?>" method="POST">
+
+  <label>Name</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type = "text" name = "name" /> <br>
+  <label>Phone</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type = "text" name = "phone" /> <br>
+  <label>Address</label>&nbsp;<input type = "text" name = "addr" /> <br>
+  <input type="submit" name="submit" />
+  </form>
+  
+</body>
+</html>
+
 
