@@ -50,6 +50,7 @@
   <br>
   <label> Trainer's Tools </label>
   <a href ="fire_trainer.php" class="list-group-item"> Fire a Trainer</a>
+    <a href ="dailysales.php" class="list-group-item"> Daily Reports</a>
   </div>
   </div>
 </div>

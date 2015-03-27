@@ -47,10 +47,10 @@ dconn_db($condb);
 			  global $tup;
 			  echo $tup;
 			?>
-			</form>
+			</form><br>
+			<img src="lion.jpg" alt="filler"  style="width:550px;height:300px">
 	  </div>
   </div>
-
 </body>
 
 </html>
