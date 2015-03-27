@@ -47,6 +47,9 @@
   <a href="animal_suppTrace.php" class="list-group-item">Supplier Animal Trace</a>
   <a href="update.php" class="list-group-item">Database Update</a>
     <a href="animal_weight.php" class="list-group-item">Animal Weights</a>
+  <br>
+  <label> Trainer's Tools </label>
+  <a href ="fire_trainer.php" class="list-group-item"> Fire a Trainer</a>
   </div>
   </div>
 </div>

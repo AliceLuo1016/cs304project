@@ -111,6 +111,8 @@ CREATE TABLE Animal(
 	hName CHAR(20)  NOT NULL,
 	aSuppID	MEDIUMINT NOT NULL,
 	Cost INT,
+	/* CHCK CONSTRAINT CODED HERE */
+	CHECK (Weight > 1),
 	PRIMARY KEY (hName, Species, aName, aSuppID),
     UNIQUE KEY (aName, Species),
 	FOREIGN KEY (hName) REFERENCES Habitat(hName),
@@ -182,7 +184,7 @@ CREATE TABLE Direct_Performance(
 	aName CHAR(10), 
 	Species	CHAR(10), 
 	PRIMARY KEY (EmpID, Start_Time, End_Time, pName, aName, Species),
-	FOREIGN KEY (EmpID) REFERENCES Trainer(Empl_ID),
+	FOREIGN KEY (EmpID) REFERENCES Trainer(Empl_ID) on DELETE CASCADE,
 	FOREIGN KEY (hName) REFERENCES Habitat(hName),
 	FOREIGN KEY (aName, Species) REFERENCES Animal(aName, Species)
 )ENGINE = InnoDB;
@@ -212,7 +214,7 @@ CREATE TABLE Care_for(
 	aName CHAR(10), 
 	Species CHAR(10),
 	PRIMARY KEY (EmpID, aName, Species),
-	FOREIGN KEY (EmpID) REFERENCES Trainer(Empl_ID),
+	FOREIGN KEY (EmpID) REFERENCES Trainer(Empl_ID) on DELETE CASCADE,
     FOREIGN KEY (aName, Species) REFERENCES Animal(aName, Species)
 );
 INSERT INTO Care_for(EmpID, aName, Species) VALUES ('1','Linda','Parrot');
