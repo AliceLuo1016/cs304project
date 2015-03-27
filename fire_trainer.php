@@ -6,20 +6,8 @@
 </head>
 <body>
 	<?php include("common_layout.php"); ?>
-  <form action="<?php $_PHP_SELF ?>" method="POST">
 
-  Name: <input type="text" name="name" />
-  Password: <input type="text" name="pw" />
-  Empl_ID to fire: <input type="text" name="fire_ID" />
-  <input type="submit" name="submit" />
-  </form>
-  
-</body>
-</html>
-
-
-
-<?php
+	<?php
 //get the functions to connect to db
 include "connectfunc.php";
 session_start();
@@ -56,8 +44,24 @@ function fire_trainer($condb) {
 }
 
 $condb = conn_db();
+?>
+<h1> Fire a Trainer </h1>
+<?php
 if (isset($_POST["submit"])) {
 	fire_trainer($condb);
 }
 dconn_db($condb);
 ?>
+
+  <form action="<?php $_PHP_SELF ?>" method="POST">
+  	<br>
+  Name: <input type="text" name="name" />
+  Password: <input type="text" name="pw" />
+  Empl_ID to fire: <input type="text" name="fire_ID" /><br><br>
+  <input type="submit" name="submit" />
+  </form>
+  
+ 
+</body>
+</html>
+

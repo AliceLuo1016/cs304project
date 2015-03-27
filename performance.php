@@ -6,10 +6,7 @@
 </head>
 <body>
 	<?php include("common_layout.php"); ?>
-</body>
-</html>
-
-<?php
+	<?php
 // get the functions to connect to db 
 include "connectfunc.php";
 
@@ -89,26 +86,43 @@ function find_showtime_from_name($condb) {
 }
 
 $condb = conn_db();
+?>
+
+<h1> Performance Table </h1>
+
+<?php
 print_performance($condb);
-if(isset($_POST["submitone"])) {
-	find_trainer_from_name($condb);
-}
-if(isset($_POST["submittwo"])) {
-	find_showtime_from_name($condb);
-}
-
-dconn_db($condb);
-
 ?>
 
 Find out who directs these performances!
   <form action="<?php $_PHP_SELF ?>" method = "POST">
   Enter a performance name: <input type = "text" name = "pname">
   <input type = "submit" name = "submitone" />
-  </form> <br>
+  </form> 
+<?php
+  if(isset($_POST["submitone"])) {
+	find_trainer_from_name($condb);
+}
+?>
+<br>
   
 Find the start and end times of a performance!
   <form action="<?php $_PHP_SELF ?>" method = "POST">
   Enter a performance name: <input type = "text" name = "ppname">
   <input type = "submit" name = "submittwo" />
   </form>
+
+<?php
+  if(isset($_POST["submittwo"])) {
+	find_showtime_from_name($condb);
+}
+
+dconn_db($condb);
+?>
+
+</body>
+</html>
+
+
+
+

@@ -9,7 +9,7 @@ function conn_db() {
     echo "Error: Could not connect to database". "<br />";
 	return null;
   }
-  echo "Successfully connected to database!". "<br />";
+  echo "<p style='width:80%; text-align:center'>"."Successfully connected to database!"."</p>";
   echo "<br>";
   return $condb;
 }

@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Animal Supplier Trace</title>
+	<title>Supplier Animal Trace</title>
 	<!-- Importing css -->
 	<link rel="stylesheet" href="css/bootstrap.min.css" >
 	<link rel="stylesheet" href="css/zoo.css" >
@@ -57,7 +57,8 @@ dconn_db($condb);
 
 ?>
 		
-		<h1>Animal Supplier Trace</h1>
+		<h1>Supplier->Animal Trace</h1>
+		<p> Find out all the animals supplied by a selected supplier. </p>
 	  <form action="<?php $_PHP_SELF ?>" method="POST">
 
 	  Supplier Name: <input type="text" name="name" />

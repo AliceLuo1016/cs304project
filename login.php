@@ -10,16 +10,7 @@ Sign In page
 </head>
 <body>
 	<?php include("common_layout.php"); ?>
-	<form action = "<?php $_PHP_SELF ?>" method= "POST">
-	
-	Name: <input type = "text" name = "empl_name" />
-	Password: <input type = "text" name = "pass"/>
-	<input type="submit" name="submit"/>
-	</form>
-</body>
-</html>
-
-<?php
+	<?php
 include "connectfunc.php";
 
 session_start();
@@ -50,10 +41,23 @@ function check_mem($condb) {
 
 
 $condb = conn_db();
+?>
 
+<h1> Trainer Sign In </h1>
+	<form action = "<?php $_PHP_SELF ?>" method= "POST">
+	
+	Name: <input type = "text" name = "empl_name" />
+	Password: <input type = "text" name = "pass"/>
+	<input type="submit" name="submit"/>
+	</form>
+<?php
 if (isset($_POST["submit"])) {
 	check_mem($condb);
 }
 dconn_db($condb);
 ?>
+</body>
+</html>
+
+
 

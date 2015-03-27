@@ -6,16 +6,7 @@
 </head>
 <body>
 	<?php include("common_layout.php"); ?>
-  <form action="<?php $_PHP_SELF ?>" method="POST">
-
-  Animal Name: <input type="text" name="name" />
-  <input type="submit" name="submit" />
-  </form>
-  
-</body>
-</html>
-
-<?php
+	<?php
 // get the functions to connect to db 
 include "connectfunc.php";
 
@@ -98,10 +89,22 @@ function name_query($condb) {
 }
 
 $condb = conn_db();
+
+?>
+<h1>Animal Table</h1>
+<?php
 print_animal($condb);
 if(isset($_POST["submit"])) {
 	name_query($condb);
 }
 dconn_db($condb);
-
 ?>
+
+  <form action="<?php $_PHP_SELF ?>" method="POST">
+
+  Animal Name: <input type="text" name="name" />
+  <input type="submit" name="submit" />
+  </form>
+  
+</body>
+</html>

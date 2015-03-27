@@ -1,3 +1,20 @@
 /*
 	Website Style
 */
+
+.btn {
+  -webkit-border-radius: 50;
+  -moz-border-radius: 50;
+  border-radius: 50px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #2E8B57;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3CB371;
+  text-decoration: none;
+}
