@@ -69,11 +69,34 @@ function find_trainer_from_name($condb) {
 	}else echo "Please enter a performance name!" . "<br>";
 }
 
+function find_showtime_from_name($condb) {
+	if ($_POST["ppname"]) {
+	    $aniname = $_POST["ppname"];
+	    $aniname = mysqli_real_escape_string($condb, $aniname);
+	   
+	    $query = "SELECT Start_Time, End_Time FROM direct_performance
+				WHERE pName = '" . "$aniname" . "'";
+				
+		$result = $condb->query($query);
+		if($result->num_rows > 0) {
+			while ($tup = $result->fetch_assoc()) {
+			  echo "Starts at: ". $tup["Start_Time"] . "<br>";
+			  echo "Ends at: " . $tup["End_Time"]. "<br>";
+			}
+			$result->free();
+		} else echo "No results, sorry" . "<br>";
+	}else echo "Please enter a performance name!" . "<br>";
+}
+
 $condb = conn_db();
 print_performance($condb);
 if(isset($_POST["submitone"])) {
 	find_trainer_from_name($condb);
 }
+if(isset($_POST["submittwo"])) {
+	find_showtime_from_name($condb);
+}
+
 dconn_db($condb);
 
 ?>
@@ -82,4 +105,10 @@ Find out who directs these performances!
   <form action="<?php $_PHP_SELF ?>" method = "POST">
   Enter a performance name: <input type = "text" name = "pname">
   <input type = "submit" name = "submitone" />
+  </form> <br>
+  
+Find the start and end times of a performance!
+  <form action="<?php $_PHP_SELF ?>" method = "POST">
+  Enter a performance name: <input type = "text" name = "ppname">
+  <input type = "submit" name = "submittwo" />
   </form>
