@@ -8,25 +8,8 @@
 	<?php include("common_layout.php"); 
 	include "connectfunc.php";
 	?>
-
-<h1>Comments </h1>
-	 <form action="<?php $_PHP_SELF ?>" method="POST">
-        <br>
-				Name:
-				<br>
-				<input type="text" name="cname" value="">
-				<br>
-				Email:
-				<br>
-				<input type="text" name="email" value="">
-				<br>
-				Comment:
-				<br>
-				<textarea name="comment" id="comment" rows= 5 cols=50 value="" maxlength="500">
-				</textarea>
-        <br>
-				<input type="submit" name="submit" value="Submit">
-			</form>
+	<div class="col-md-4"></div>
+  <div class="col-md-8">
 
 <?php
 
@@ -65,7 +48,26 @@ if (isset($_POST["submit"])) {
 }
 dconn_db($condb);
 ?>
-  
+<h1>Comments </h1>
+	 <form action="<?php $_PHP_SELF ?>" method="POST">
+        <br>
+				Name:
+				<br>
+				<input type="text" name="cname" value="">
+				<br>
+				Email:
+				<br>
+				<input type="text" name="email" value="">
+				<br>
+				Comment:
+				<br>
+				<textarea name="comment" id="comment" rows= 5 cols=50 value="" maxlength="500">
+				</textarea>
+        <br>
+				<input type="submit" name="submit" value="Submit">
+			</form>
+
+  </div>
 </body>
 </html>
 

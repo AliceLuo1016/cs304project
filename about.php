@@ -12,8 +12,9 @@ Give a brief information introduction about our website.
 <body>
 	<?php include("common_layout.php"); ?>
 
-
-	<div style="width:80%; text-align:center; padding-top:80px; padding-bottom:30px;">
+	<div class="col-md-4"></div>
+  <div class="col-md-8">
+	<div style="width:80%; text-align:center">
         <h2 style="font-size: 1.4em;"> Welcome to the PseudoZoo - the World’s Best Fictitious Zoo! <br /> </h2>
 
 	<p style="text-align:left"> <br>
@@ -40,6 +41,8 @@ Give a brief information introduction about our website.
 	<br>
 	Holidays: Closed
 	<p>
+
+</div>
 
 </body>
 </html>

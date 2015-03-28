@@ -16,6 +16,9 @@
 	$IsValid = true;
 
 	?>
+	<div class="col-md-4"></div>
+  <div class="col-md-8">
+
 
 <h1>Animal Database Management</h1><br>
 
@@ -25,7 +28,7 @@
 		$query = "SELECT * FROM Animal";
 		$result = $condb->query($query);
 
-		echo "<table style='width:60%; text-align:left;'>";
+		echo "<table style='width:100%; text-align:left;'>";
 		echo "<tr>";
 		echo "<th>Animal Name</th>";
 		echo "<th>Species</th>";
@@ -147,7 +150,7 @@
 
 ?>
 
-
+</div>
 </body>
 </html>
 
