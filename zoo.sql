@@ -223,6 +223,7 @@ INSERT INTO Care_for(EmpID, aName, Species) VALUES ('3','Emily','Panda');
 INSERT INTO Care_for(EmpID, aName, Species) VALUES ('4','Tommy','Lion');
 INSERT INTO Care_for(EmpID, aName, Species) VALUES ('5','Jack','Shark');
 
+drop table if exists Comments;
 CREATE TABLE Comments(
 	cName CHAR(30),
 	Email CHAR(30),

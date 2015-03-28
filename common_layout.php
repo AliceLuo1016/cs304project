@@ -1,3 +1,4 @@
+ <?php session_start();?>
 
 <style>
 body  {
@@ -49,15 +50,26 @@ body  {
   <label> Customer Service </label>
   <a href="membership.php" class="list-group-item">Membership Application</a>
   <a href="comments.php" class="list-group-item">Comments</a>
-  <br>
-  <label> Animal Information Center </label>
-  <a href="animal_suppTrace.php" class="list-group-item">Supplier Animal Trace</a>
-  <a href="update.php" class="list-group-item">Database Update</a>
-    <a href="animal_weight.php" class="list-group-item">Animal Weights</a>
-  <br>
-  <label> Trainer's Tools </label>
-  <a href ="fire_trainer.php" class="list-group-item"> Fire a Trainer</a>
-    <a href ="dailysales.php" class="list-group-item"> Daily Reports</a>
+
+    <?php
+        echo "Welcome to our zoo: ".$_SESSION["username"]."<br />";
+          if (isset($_SESSION["username"]) && $_SESSION["username"] != NULL) {
+            echo ('
+
+              <label> Animal Information Center </label>
+              <a href="animal_suppTrace.php" class="list-group-item">Supplier Animal Trace</a>
+              <a href="update.php" class="list-group-item">Database Update</a>
+              <a href="animal_weight.php" class="list-group-item">Animal Weights</a>
+              <br>
+              <label> Trainer Tools </label>
+              <a href ="fire_trainer.php" class="list-group-item"> Fire a Trainer</a>
+              <a href ="dailysales.php" class="list-group-item"> Daily Reports</a>
+              <br>
+              <a href ="logout.php" class="list-group-item"> Log Out</a>
+            ');
+          }
+        ?>
+  
   </div>
   </div>
 </div>

@@ -13,8 +13,6 @@
 // get the functions to connect to db
 include "connectfunc.php";
 
-session_start();
-
 function foodsales_query($condb) {
 	$query = "SELECT SUM(balance), SUM(hotdog_stock)
 	FROM food_stand";

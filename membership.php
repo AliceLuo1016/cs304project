@@ -11,8 +11,6 @@
 //get the functions to connect to db
 include "connectfunc.php";
 
-session_start();
-
 function new_member($condb) {
 	if ($_POST["name"] && $_POST["phone"] && $_POST["addr"]) {
 		$mname = $_POST["name"];

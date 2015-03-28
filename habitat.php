@@ -13,8 +13,6 @@
 // get the functions to connect to db 
 include "connectfunc.php";
 
-session_start();
-
 function print_habitats($condb) {
 	$query = "SELECT * FROM habitat";
 	$result = $condb->query($query);

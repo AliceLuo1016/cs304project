@@ -13,7 +13,6 @@
 // get the functions to connect to db
 include "connectfunc.php";
 
-session_start();
 
 function animalSupplier_query($condb) {
 	echo "Get ". $_POST["name"]. "<br />";

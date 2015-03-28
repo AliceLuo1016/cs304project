@@ -10,7 +10,6 @@
 	<?php
 //get the functions to connect to db
 include "connectfunc.php";
-session_start();
 
 
 function fire_trainer($condb) {

@@ -24,11 +24,12 @@
 
 <body>
 
-  <?php include("common_layout.php"); ?>
+  <?php 
+  include("common_layout.php"); 
+  ?>
+
    <?php 
       include "connectfunc.php";
-      session_start();
-
       $tup;
       function update_mem_count($condb) {
       $query = "SELECT COUNT(*) FROM member";

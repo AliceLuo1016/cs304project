@@ -13,7 +13,6 @@
 // get the functions to connect to db
 include "connectfunc.php";
 
-session_start();
 
 function weightMax_query($condb) {
 	$query = "SELECT Gender, avg_weight

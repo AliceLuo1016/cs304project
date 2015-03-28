@@ -1,7 +1,6 @@
 <!--
 Sign In page
 -->
-
 <html>
 <head>
 	<!-- Importing css -->
@@ -12,8 +11,6 @@ Sign In page
 	<?php include("common_layout.php"); ?>
 	<?php
 include "connectfunc.php";
-
-session_start();
 
 function check_mem($condb) {
 	if($_POST["empl_name"] && $_POST["pass"]){
@@ -29,6 +26,7 @@ function check_mem($condb) {
 		
 		if($result->num_rows > 0) {
 			echo "Thank you for logging in, $mname";
+			$_SESSION["username"] = $mname;
 		} else {
 			echo "Incorrect trainer Name or Password, please try again!";
 			echo "$mname";
@@ -44,7 +42,7 @@ $condb = conn_db();
 ?>
 
 <h1> Trainer Sign In </h1>
-	<form action = "<?php $_PHP_SELF ?>" method= "POST">
+	<form action = "<?php $_PHP_SELF ?>"  method= "POST">
 	
 	Name: <input type = "text" name = "empl_name" />
 	Password: <input type = "text" name = "pass"/>

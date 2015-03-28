@@ -5,12 +5,15 @@
 	<link rel="stylesheet" href="css/zoo.css" >
 </head>
 <body>
-	<?php include("common_layout.php"); ?>
+	<?php include("common_layout.php"); 
+	include "connectfunc.php";?>
+	
+<div class="col-md-4"></div>
+  <div class="col-md-8">
+
 	<?php
 // get the functions to connect to db 
-include "connectfunc.php";
 
-session_start();
 
 function print_performance($condb) {
 	$query = "SELECT * FROM direct_performance";
@@ -119,6 +122,7 @@ Find the start and end times of a performance!
 
 dconn_db($condb);
 ?>
+</div>
 
 </body>
 </html>

@@ -10,8 +10,6 @@
 // get the functions to connect to db 
 include "connectfunc.php";
 
-session_start();
-
 function print_animal($condb) {
 	$query = "SELECT * FROM animal";
 	$result = $condb->query($query);

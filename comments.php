@@ -5,7 +5,9 @@
 	<link rel="stylesheet" href="css/zoo.css" >
 </head>
 <body>
-	<?php include("common_layout.php"); ?>
+	<?php include("common_layout.php"); 
+	include "connectfunc.php";
+	?>
 
 <h1>Comments </h1>
 	 <form action="<?php $_PHP_SELF ?>" method="POST">
@@ -29,9 +31,6 @@
 <?php
 
 //get the functions to connect to db
-include "connectfunc.php";
-
-session_start();
 
 function new_comment($condb) {
 	if ($_POST["comment"] && $_POST["cname"] && $_POST["email"]) {
